@@ -8,8 +8,8 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS to allow frontend to communicate with backend
 
 # Load your pre-trained model and vectorizer
-model = pickle.load(open('chat2.pkl', 'rb'))
-vectorizer = pickle.load(open('tfidf.pkl', 'rb'))
+model = pickle.load(open('model_response.pkl', 'rb'))
+vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
 
 @app.route('/api/chatbot', methods=['POST'])
 def chatbot_response():
