@@ -10,7 +10,7 @@ async function sendMessage() {
 
     // Send the message to the backend
     try {
-        const response = await fetch('https://YOUR_RENDER_SERVICE_URL/api/chatbot', {
+        const response = await fetch('https://chatbot-backend-8ftb.onrender.com/api/chatbot', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: userMessage })
