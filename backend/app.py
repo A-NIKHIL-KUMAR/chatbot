@@ -3,6 +3,10 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pickle
+import numpy
+import sklearn
+import flask_cors
+import gunicorn
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS to allow frontend to communicate with backend
@@ -21,6 +25,17 @@ def chatbot_response():
     input_vec = vectorizer.transform([user_input])
     prediction = model.predict(input_vec)
     return jsonify({'response': prediction[0]})
+
+# New route to verify installed package versions
+@app.route('/api/versions', methods=['GET'])
+def versions():
+    return jsonify({
+        'numpy': numpy.__version__,
+        'scikit-learn': sklearn.__version__,
+        'Flask': Flask.__version__,
+        'flask-cors': flask_cors.__version__,
+        'gunicorn': gunicorn.__version__
+    })    
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
