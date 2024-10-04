@@ -7,7 +7,7 @@ import pickle
 app = Flask(__name__)
 CORS(app)  # Enable CORS to allow frontend to communicate with backend
 
-# Load your pre-trained model and vectorizer
+# Load your pre-trained model and vectorizer 
 model = pickle.load(open('model_response.pkl', 'rb'))
 vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
 
