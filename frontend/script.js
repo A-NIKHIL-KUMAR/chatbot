@@ -18,12 +18,12 @@ async function sendMessage() {
 
         const data = await response.json();
         if (response.ok) {
-            messagesDiv.innerHTML += `<div class="message bot">Bot: ${data.response}</div>`;
+            messagesDiv.innerHTML += `<div class="message bot">Inno: ${data.response}</div>`;
         } else {
-            messagesDiv.innerHTML += `<div class="message bot">Bot: ${data.response}</div>`;
+            messagesDiv.innerHTML += `<div class="message bot">Inno: ${data.response}</div>`;
         }
     } catch (error) {
-        messagesDiv.innerHTML += `<div class="message bot">Bot: Sorry, something went wrong.</div>`;
+        messagesDiv.innerHTML += `<div class="message bot">Inno: Sorry, something went wrong.</div>`;
     }
 
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
